@@ -1,2 +1,2 @@
-Sinatra-Skeleton
+ Sinatra-Skeleton
 ================
