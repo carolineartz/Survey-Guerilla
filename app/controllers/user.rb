@@ -5,19 +5,21 @@ before '/users/*' do
 	end
 end
 
-get '/users/:id' do
-	erb :user_id
-end
-
-delete '/sessions' do
-  session.delete("user_id")
-	erb :index
-end
-
 get '/sessions/new' do
   erb :login
 end
 
+delete '/sessions' do
+  session.delete("user_id")
+  erb :index
+end
+
+get '/users/:id' do
+	erb :user_id
+end
+
+
+# --------------------- POST REQUESTS -----------------
 post '/sessions' do
   email = params[:email]
   password = params[:password]
@@ -30,14 +32,11 @@ post '/sessions' do
   end
 end
 
-post '/register' do
-  email = params[:email]
-  password = params[:password]
-  if User.find_by_email(email)
-    redirect to '/?params_registration=There was an error with registration'
-  else
-    @user = User.create(email: email)
-    @user.password = password
+#
+post '/users' do
+    @user User.authenticate(params[:email], params[:password])
+    @user = User.create(email: params[:email])
+    @user.password = params[:password]
     @user.save
 
     session[:user_id] = @user.id
