@@ -5,6 +5,10 @@ get '/' do
   erb :index
 end
 
+get '/sessions/new' do
+	erb :login
+end
+
 post '/login' do
 	email = params[:email]
 	password = params[:password]

@@ -1,4 +1,4 @@
-Sinatra-Skeleton
+ Sinatra-Skeleton
 ================
 
 Team 1
