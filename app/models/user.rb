@@ -1,10 +1,9 @@
-require 'bcrypt'
-
 class User < ActiveRecord::Base
-  validates :username, uniqueness: true, presence: true
-  validates :email, uniqueness: true, presence: true
   has_many :surveys
   has_many :participations
+
+  validates :username, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true
 
   include BCrypt
 
