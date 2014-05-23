@@ -34,8 +34,12 @@ end
 
 #
 post '/users' do
-    @user User.authenticate(params[:email], params[:password])
-    @user = User.create(email: params[:email])
+  email = params[:email]
+  password = params[:password]
+  if User.find_by_email(email)
+    redirect to '/?params_registration=There was an error with registration'
+  else
+    @user = User.create(email: email, password: )
     @user.password = params[:password]
     @user.save
 
