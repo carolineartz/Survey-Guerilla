@@ -1,11 +1,14 @@
+
+    <% if current_user %>
 <div class = "nav">
   <ul>
 <!--<li><a href="#">Link1</a></li>
     <li><a href="#">Link2</a></li>
     <li><a href="#">Link3</a></li> -->
-    <% if session %>
-      <li><a href="/users/id">Profile</a></li>
-      <li><a href="/logout">Logout</a></li>
-    <% end %>
+
+      <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+
   </ul>
 </div>
+    <% end %>

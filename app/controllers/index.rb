@@ -5,36 +5,10 @@ get '/' do
   erb :index
 end
 
-get '/sessions/new' do
-	erb :login
+get '/surveys/new' do
+	erb :surveys_new
 end
 
-post '/login' do
-	email = params[:email]
-	password = params[:password]
-	if User.authenticate(email, password)
-		user = User.find_by_email(email)
-		session[:user_id] = (User.find_by_email(email)).id
-		redirect '/user/home'
-	else
-		redirect '/?params_login=There was an error with login.'
-	end
+post '/surveys' do
 
 end
-
-post '/register' do
-	email = params[:email]
-	password = params[:password]
-	if User.find_by_email(email)
-		redirect to '/?params_registration=There was an error with registration'
-	else
-		@user = User.create(email: email)
-		@user.password = password
-		@user.save
-
-		session[:user_id] = @user.id
-		redirect '/user/home'
-	end
-end
-
-
