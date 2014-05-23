@@ -2,7 +2,15 @@
 <h2>Create Survey</h2>
 
 <form method="post" action="/surveys">
-  <label></label>
-  <input type="text" name="Title" placeholder="Survey Title">
+  <p><label>Survey Title:
+  <input type="text" name="title" placeholder="Survey Title">
+  </label></p>
+  <p><label>Create Question:
+  <input type="text" name="question_text" placeholder="Question">
+  </label></p>
+  <p><label>Create Possible Choices:
+  <input type="text" name="choice_text" placeholder="Possible Choice">
+  </label></p>
+  <input type="submit" value="Create Survey!">
 </form>
 
