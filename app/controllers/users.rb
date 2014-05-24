@@ -14,6 +14,7 @@ delete '/sessions' do
   erb :index
 end
 
+
 get '/users/:id' do
 	erb :user_id
 end
