@@ -6,7 +6,7 @@ before '/users/*' do
 end
 
 get '/sessions/new' do
-  erb :login
+  erb :'users/login'
 end
 
 delete '/sessions' do

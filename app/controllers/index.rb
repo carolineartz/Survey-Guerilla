@@ -6,12 +6,13 @@
 # end
 
 get '/' do
+
   erb :index
 end
 
 
 get '/users/:user_id' do
-  "Hello World"
+  erb :"users/sign_up"
 end
 
 post '/surveys/new' do
