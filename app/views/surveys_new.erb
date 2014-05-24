@@ -6,24 +6,43 @@
 </div> -->
 
 
-<form id="create_survey" method="post" action="/surveys/new">
+<!-- <form id="create_survey" method="post" action="/surveys/new">
   <h2><label id="title_label">Survey Title:
   <input id="survey_title_field" type="text" name="title" placeholder="Survey Title">
   <button id="build_survey">Build Survey</button>
-  <!-- <input id="title_submit" type="submit" value="Create Title"> -->
+
   </label></h2>
 
   <div id ="question_set_1"><label id="question_label_1">Create Question:
   <input id="question_field" type="text" name="question_text" placeholder="Question">
-  <!-- <input id="question_submit" type="submit" value="Create Question"> -->
-  <button id="build_question">Create Question</button>
+
+  <button id="build_question">Add New Question</button>
   </label></div>
 
 
   <div id ="choice_set_1"><label>Create Possible Choices:
   <input id="choice_field" type="text" name="choice_text" placeholder="Possible Choice">
+  <button id="add_new_choice">Add New Choice</button>
   </label></div>
-  <!-- <input id="choice_submit" type="submit" value="Create This Choice"><br> -->
+
+  <input id="form_complete" type="submit" value="Create Survey">
+</form> -->
+<!-- ________________________________________________________________ -->
+
+<form id="create_survey" method="post" action="/surveys/new">
+  <h2><label id="title_label">Survey Title:
+  <input id="survey_title_field" type="text" name="title" placeholder="Survey Title">
+  </label></h2>
+
+  <div id ="questions">
+  <button id="add_question">Add New Question</button>
+  </div>
+
+  <div id ="choices">
+  <button id="add_choice">Add New Choice</button>
+  </div>
+
   <input id="form_complete" type="submit" value="Create Survey">
 </form>
+
 
