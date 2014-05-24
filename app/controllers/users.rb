@@ -5,43 +5,56 @@ before '/users/*' do
 	end
 end
 
+#----------- SESSIONS -----------
+
 get '/sessions/new' do
-  erb :login
+  # render sign-in page
+  erb :"users/log_in"
 end
 
-delete '/sessions' do
-  session.delete("user_id")
-  erb :index
-end
-
-
-get '/users/:id' do
-	erb :user_id
-end
-
-
-# --------------------- POST REQUESTS -----------------
 post '/sessions' do
-  email = params[:email]
-  password = params[:password]
-  user = User.authenticate(email, password)
+  # Log-in
+  @email = params[:email]
+  user = User.authenticate(@email, params[:password])
   if user
+    # successfully authenticated; set up session and redirect
     session[:user_id] = user.id
-    redirect "/users/#{session[:user_id]}"
+    redirect '/'
   else
-    redirect '/?params_login=There was an error with login.'
+    # an error occurred, re-render the sign-in form, displaying an error
+    @error = "Invalid email or password."
+    erb :"users/log_in"
   end
 end
 
+delete '/sessions/:id' do
+  # sign-out -- invoked via AJAX
+  return 401 unless params[:id].to_i == session[:user_id].to_i
+  session.clear
+  if request.xhr?
+    200
+  else
+    erb :index
+  end
+end
+
+#----------- USERS -----------
+get '/users/new' do
+  # render sign-up page
+  @user = User.new
+  erb :"users/sign_up"
+end
 
 post '/users' do
-  if User.find_by_email(email)
-    redirect to '/?params_registration=There was an error with registration'
-  else
-    @user = User.create(email: params[:email], password: params[:password])
-
+  # Sign-up
+  @user = User.new params[:user]
+  if @user.save
+    # successfully created new account; set up the session and redirect
     session[:user_id] = @user.id
-    redirect '/user/home'
+    redirect '/'
+  else
+    # an error occurred, re-render the sign-up form, displaying errors
+    erb :"users/sign_up"
   end
 end
 
