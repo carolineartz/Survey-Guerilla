@@ -1,9 +1,3 @@
-before '/users/*' do
-	#DOES THIS EVEN DO ANYTHING?
-	if session[:user_id] != (User.find(session[:user_id])).id
-		redirect '/' #return to root because you are not supposed to be here
-	end
-end
 
 #----------- SESSIONS -----------
 
@@ -19,7 +13,7 @@ post '/sessions' do
   if user
     # successfully authenticated; set up session and redirect
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/users/#{user.id}"
   else
     # an error occurred, re-render the sign-in form, displaying an error
     @error = "Invalid email or password."
@@ -27,7 +21,9 @@ post '/sessions' do
   end
 end
 
-delete '/sessions/:id' do
+# This is supposed to be a delete request, but the form to send the delete
+# request looked ugly, so we used an <a href=""> and sent a GET request...
+get '/sessions/:id' do
   # sign-out -- invoked via AJAX
   return 401 unless params[:id].to_i == session[:user_id].to_i
   session.clear

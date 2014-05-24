@@ -1,9 +1,11 @@
+<h2>IT'S A TEQUILA SUNRISE THERE SURVEY SOLDIERS, SO<br>
+LET'S MAKE SOME SURVEYS TO CONQUER THE WORLD!!</h2>
 
-<div class="account">
-  <form method="get" action="/sessions/new">
-    <button type="submit">Login </button>
-  </form>
-  <form method="get" action="#">
-    <button type="submit">Sign Up</button>
-  </form>
-</div>
+<%= @errors if @errors %>
+
+<%if !session[:user_id]%>
+  <h4>LOGIN AND MAKE SURVEYS IF YOU ARE STRONG</h4>
+<%else%>
+ <h4>YOU ARE STRONG. NOW CONDUCT SURVEY WARFARE!!!!!</h4>
+ <a href="/users/<%=session[:user_id]%>">TAKE ME TO FRONT LINES</a>
+<%end%>

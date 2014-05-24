@@ -73,3 +73,8 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+a {
+  color: gray;
+  text-decoration: none;
+}
