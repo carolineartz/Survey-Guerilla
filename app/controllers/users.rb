@@ -1,9 +1,7 @@
-
 #----------- SESSIONS -----------
 
 get '/sessions/new' do
-  # render sign-in page
-  erb :"users/log_in"
+  erb :"users/login"
 end
 
 post '/sessions' do
