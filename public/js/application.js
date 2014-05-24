@@ -1,59 +1,31 @@
 $(function() {
-  // $("#question_set_1").hide();
-  // $("#choice_set_1").hide();
-  // $("#show_survey_title").hide();
-  // $("#form_complete").hide();
-
-  // $("#build_survey").click(function(event){
-  //   $("#survey_title_field").hide();
-  //   $("#build_survey").hide();
-  //   var title= $("#survey_title_field").val();
-  //   $('#title_label').append("<span>" + title + "</span>");
-  //   $("#question_set_1").toggle();
-  // });
-
-  // $("#build_question").click(function(event){
-  //   $("#question_field").hide();
-  //   $("#build_question").hide();
-  //   var question= $("#question_field").val();
-  //   $('#question_label_1').append("<span>" + question + "</span>");
-  // });
-
-  // $("#create_survey").submit(function(event){
-  //   event.preventDefault();
-  //   var postData = $("#create_survey").serialize();
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "/title/new",
-  //     data: postData
-  //   })
-  //   .success(function(){
-  //     console.log("ajax is a mother lover")
-  //   });
-  // });
-// ___________________________________________________________
-// dynamic form practice______________________________________
 
   var questionCount = 0
+
   $("#add_question").click(function(e){
     e.preventDefault();
-    var htmlNew = "<input id='question_field' type='text' name='question_text' placeholder='Question'>"
-    $("#questions")
+    questionCount++;
+    var newQuestion = '<input type="text" name="question_text' + questionCount + '" placeholder="Question ' + questionCount + '"><br />'
+    var choiceButton = '<button id="add_choice' + questionCount + '">Add New Choice</button><br /><br />'
+    $(this).before(newQuestion + choiceButton)
+
+    var choiceCount = 0
+    $("#add_choice" + questionCount).click(function(e){
+      e.preventDefault();
+      choiceCount++;
+      var newChoice = '<input type="text" name="choice_text' + choiceCount + '" placeholder="Choice ' + choiceCount + '"><br />'
+      $(this).before(newChoice)
+    });
   });
-
-
-  $("#add_choice").click(function(e){
-    e.preventDefault();
-  });
-
-
 });
 
 
+    // .append() // adds as first child inside itself
+    // .prepend() // adds as last child inside itself
+    // .before() // adds in same container, directly before caller
+    // .after() // adds in same container, directly after caller
 
-
-
-
-
-// the #show_survey div shows the survey previous,
-// not the current one.
+    // To string in JQuery
+    // 0 + ""
+    // => "0"
+    // aka 0 + "hello" => "0hello"
