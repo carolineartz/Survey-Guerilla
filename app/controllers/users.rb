@@ -1,12 +1,12 @@
-before '/users/*' do
-	#DOES THIS EVEN DO ANYTHING?
-	if session[:user_id] != (User.find(session[:user_id])).id
-		redirect '/' #return to root because you are not supposed to be here
-	end
-end
+# before '/users/*' do
+# 	#DOES THIS EVEN DO ANYTHING?
+# 	if session[:user_id] != (User.find(session[:user_id])).id
+# 		redirect '/' #return to root because you are not supposed to be here
+# 	end
+# end
 
 get '/sessions/new' do
-  erb :login
+  erb :"users/login"
 end
 
 delete '/sessions' do

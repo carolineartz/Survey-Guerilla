@@ -9,9 +9,12 @@ get '/' do
   erb :index
 end
 
+get '/users/new' do
+  "Add Sign Up Functionality"
+end
 
 get '/users/:user_id' do
-  "Hello World"
+  erb :user_id
 end
 
 post '/surveys/new' do
