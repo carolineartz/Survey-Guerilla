@@ -23,8 +23,8 @@ end
 post '/sessions' do
   email = params[:email]
   password = params[:password]
-  user = User.authenticate(email, password)
-  if user
+  if User.authenticate(email, password)
+    user = User.find_by_email(email)
     session[:user_id] = user.id
     redirect "/users/#{session[:user_id]}"
   else
@@ -32,13 +32,12 @@ post '/sessions' do
   end
 end
 
-
+#
 post '/users' do
   if User.find_by_email(email)
     redirect to '/?params_registration=There was an error with registration'
   else
     @user = User.create(email: params[:email], password: params[:password])
-
     session[:user_id] = @user.id
     redirect '/user/home'
   end
