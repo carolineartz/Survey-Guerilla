@@ -1,16 +1,39 @@
 
 <h2>Create Survey</h2>
 
-<form method="post" action="/surveys">
+<div id="show_survey">
+  Survey Title: <%=session[:survey_title]%>
+</div>
+<div id="show_question">
+  Question Title: <%=session[:question_text] %>
+</div>
+<div id="show_choice">
+  Choices:
+  <%=Question.find_by_question_text(session[:question_text]).choices.each do |c| %>
+  <%q.choice_text%>
+  <%%>
+</div>
+
+<form id="title_form" method="post" action="/title/new">
   <p><label>Survey Title:
-  <input type="text" name="title" placeholder="Survey Title">
+  <input id="survey_title" type="text" name="title" placeholder="Survey Title">
+  <input id="title_submit" type="submit" value="Create Title">
   </label></p>
+</form>
+
+<form id="question_form" method="post" action="/question/new">
   <p><label>Create Question:
   <input type="text" name="question_text" placeholder="Question">
+  <input id="question_submit" type="submit" value="Create Question">
   </label></p>
+</form>
+
+<form id="choices_form" method="post" action="/title/new">
   <p><label>Create Possible Choices:
   <input type="text" name="choice_text" placeholder="Possible Choice">
   </label></p>
-  <input type="submit" value="Create Survey!">
+  <input id="choice_submit" type="submit" value="Create This Choice"><br>
+  <!-- <input type="submit" value="Create Survey!"> -->
+  <button type="button">Finish This Question</button>
 </form>
 
