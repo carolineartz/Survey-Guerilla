@@ -11,9 +11,9 @@ end
 
 get '/surveys/:survey_id' do
   @survey = Survey.find_by_id(params[:survey_id])
-  @participation = @survey.participations
+  @participations = @survey.participations
 
-  erb :user_created_surveys
+  erb :survey_results
 end
 
 post '/surveys' do

@@ -16,7 +16,7 @@ post '/sessions' do
   else
     # an error occurred, re-render the sign-in form, displaying an error
     @error = "Invalid email or password."
-    erb :"users/log_in"
+    erb :"users/login"
   end
 end
 

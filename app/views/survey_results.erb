@@ -1,7 +1,6 @@
-<h1> TODO: create complex views n shit </h1>
-  <h3><%= @survey.title %></h3>
+  <h3><%= @survey.title %> results:</h3>
     <% @participations.each do |participation| %>
 
-      <p> <%= participation.user.email %> </p>
+      <p><%= participation.user.email %> </p>
 
     <% end %>
