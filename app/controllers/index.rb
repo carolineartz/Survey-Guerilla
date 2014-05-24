@@ -12,8 +12,15 @@ end
 
 post '/surveys/new' do
 	new_survey = Survey.create(title: params[:title])
+	# p "+++++++++ #{new_survey.title} "
 	new_question = Question.create(question_text: params[:question_text], survey_id: new_survey.id)
+	# p "+++++++++ #{new_question.question_text} "
+	# p params[:question_text1]
 	new_choices = Choice.create(choice_text: params[:choice_text], question_id: new_question.id)
+	# p "+++++++++ #{new_choices.choice_text} "
+	p "+++++++++ #{params} "
+	params.each { |param| p param }
+
 		if new_survey && new_question && new_choices
 			redirect "/users/#{session[:user_id]}"
 		else
