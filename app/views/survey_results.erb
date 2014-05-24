@@ -1,6 +1,6 @@
   <h3><%= @survey.title %> results:</h3>
     <% @participations.each do |participation| %>
 
-      <p><%= participation.user.email %> </p>
+      <p><%= participation.user.username %> | <%= participation.survey_responses.first.choice.choice_text %> </p>
 
     <% end %>
