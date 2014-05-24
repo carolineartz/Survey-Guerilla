@@ -1,4 +1,5 @@
 get '/surveys/new' do
+  "FUCK:"
   erb :surveys_new
 end
 
@@ -9,8 +10,10 @@ get '/users/:user_id/surveys' do
 end
 
 get '/surveys/:survey_id' do
+  @survey = Survey.find_by_id(params[:survey_id])
+  @participation = @survey.participations
 
-  erb :tbd
+  erb :user_created_surveys
 end
 
 post '/surveys' do

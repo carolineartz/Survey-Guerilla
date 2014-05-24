@@ -40,7 +40,7 @@ get '/users/new' do
 end
 
 get '/users/:user_id' do
-  "Hello World"
+  erb :user_id
 end
 
 post '/users' do
