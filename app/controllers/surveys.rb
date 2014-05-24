@@ -24,6 +24,3 @@ post '/surveys' do
     "whoops"
   end
 end
-
-
-

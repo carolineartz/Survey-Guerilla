@@ -9,11 +9,6 @@ get '/' do
   erb :index
 end
 
-
-get '/users/:user_id' do
-  "Hello World"
-end
-
 post '/surveys/new' do
 	new_survey = Survey.create(title: params[:title])
 	new_question = Question.create(question_text: params[:question_text], survey_id: new_survey.id)
