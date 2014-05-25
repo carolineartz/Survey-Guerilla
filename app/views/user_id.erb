@@ -1,12 +1,12 @@
 <h1>User home page</h1>
 
-  <form method="post" action="/sessions">
+<!--   <form method="post" action="/sessions">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Logout">
-  </form>
+  </form> -->
 
-<a href="/surveys/new">Create New Survey</a>
+<a href="/surveys/new">Create New Survey</a><br><br>
 
-<a href="/surveys/take">Take Survey</a>
+<a href="/surveys/take">Take Survey</a><br><br>
 
-<a href="/users/<%=session[:user_id]%>/surveys">View Your Surveys</a>
+<a href="/users/<%=session[:user_id]%>/surveys">View Your Surveys</a><br><br>
