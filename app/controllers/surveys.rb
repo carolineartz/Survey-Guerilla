@@ -1,5 +1,5 @@
 get '/surveys/new' do
-  "FUCK:"
+ # "FUCK:"
   erb :surveys_new
 end
 
