@@ -6,7 +6,7 @@ $(function() {
     e.preventDefault();
     questionCount++;
     var newQuestion = '<input type="text" name="question_text' + questionCount + '" placeholder="Question ' + questionCount + '"><br />'
-    var choiceButton = '<button id="add_choice' + questionCount + '">Add New Choice</button><br /><br />'
+    var choiceButton = '<button class="pure-button" id="add_choice' + questionCount + '">Add New Choice</button><br /><br />'
     $(this).before(newQuestion + choiceButton)
 
     var choiceCount = questionCount

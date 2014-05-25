@@ -1,0 +1,86 @@
+
+@font-face {
+    font-family: 'wc_rhesus_a_btaregular';
+    src: url('fonts/WC_Rhesus_A_Bta-webfont.eot');
+    src: url('fonts/WC_Rhesus_A_Bta-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/WC_Rhesus_A_Bta-webfont.woff') format('woff'),
+         url('fonts/WC_Rhesus_A_Bta-webfont.ttf') format('truetype'),
+         url('fonts/WC_Rhesus_A_Bta-webfont.svg#wc_rhesus_a_btaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'copystructnormal';
+    src: url('fonts/COPYN___-webfont.eot');
+    src: url('fonts/COPYN___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/COPYN___-webfont.woff') format('woff'),
+         url('fonts/COPYN___-webfont.ttf') format('truetype'),
+         url('fonts/COPYN___-webfont.svg#copystructnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hvd_peaceregular';
+    src: url('fonts/HVD_Peace-webfont.eot');
+    src: url('fonts/HVD_Peace-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HVD_Peace-webfont.woff') format('woff'),
+         url('fonts/HVD_Peace-webfont.ttf') format('truetype'),
+         url('fonts/HVD_Peace-webfont.svg#hvd_peaceregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'special_eliteregular';
+    src: url('fonts/SpecialElite-webfont.eot');
+    src: url('fonts/SpecialElite-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SpecialElite-webfont.woff') format('woff'),
+         url('fonts/SpecialElite-webfont.ttf') format('truetype'),
+         url('fonts/SpecialElite-webfont.svg#special_eliteregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+@font-face {
+    font-family: 'veneer_extrasregular';
+    src: url('fonts/veneerextras-webfont.eot');
+    src: url('fonts/veneerextras-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/veneerextras-webfont.woff') format('woff'),
+         url('fonts/veneerextras-webfont.ttf') format('truetype'),
+         url('fonts/veneerextras-webfont.svg#veneer_extrasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+ @font-face {
+    font-family:"XXII DIRTY-ARMY";
+    src:url("fonts/XXII_DIRTY-ARMY.eot?") format("eot"), 
+        url("fonts/XXII_DIRTY-ARMY.woff") format("woff"), 
+        url("fonts/XXII_DIRTY-ARMY.ttf") format("truetype"), 
+        url("fonts/XXII_DIRTY-ARMY.svg#XXIIARMY") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+ @font-face {
+    font-family:"Octin Vintage Free";
+    src:url("fonts/Octin_Vintage/octin_vintage_free.eot?") format("eot"), 
+        url("fonts/Octin_Vintage/octin_vintage_free.woff") format("woff"), 
+        url("fonts/Octin_Vintage/octin_vintage_free.ttf") format("truetype"), 
+        url("fonts/Octin_Vintage/octin_vintage_free.svg#OctinVintageFree") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}

@@ -1,5 +1,5 @@
-  <nav>
-    <div class="brand"><a href="/">SURVEY GUERILLA WARFARE</a></div>
+  <nav class="pure-menu pure-menu-open pure-menu-horizontal">
+    <a class="pure-menu-heading" href="/">SURVEY GUERILLA WARFARE</a>
     <ul>
       <% if current_user %>
         <li><a id="sign-out" href="/sessions/<%= current_user.id %>">Sign Out</a></li>
@@ -9,3 +9,4 @@
       <% end %>
     </ul>
   </nav>
+

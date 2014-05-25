@@ -1,11 +1,18 @@
-<h2>IT'S A TEQUILA SUNRISE THERE SURVEY SOLDIERS, SO<br>
-LET'S MAKE SOME SURVEYS TO CONQUER THE WORLD!!</h2>
+<main class="pure-g-r">
+<!-- <h2 class="pure-u-1">IT'S A TEQUILA SUNRISE THERE SURVEY SOLDIERS, SO<br>
+LET'S MAKE SOME SURVEYS TO CONQUER THE WORLD!!</h2> -->
+<section class="welcome pure-u-1">
+<h1 class="main-heading">Welcome to Survey Guerilla Warfare</h1>
+<h2 class="sub-heading" >It's a tequila sunrise there survey soldiers, so let's make some surveys to conquer the world!!</h2>
+</section>
 
 <%= @errors if @errors %>
-
+<div class="pure-u-1">
 <%if !session[:user_id]%>
-  <h4>LOGIN AND MAKE SURVEYS IF YOU ARE STRONG</h4>
+  <h3 class="index-text">Login And Make Surveys If You Are Strong</h3>
 <%else%>
- <h4>YOU ARE STRONG. NOW CONDUCT SURVEY WARFARE!!!!!</h4>
+ <h3 class="index-text">You Are Strong. Now Conduct Survey Warfare!!!!!</h3>
  <a href="/users/<%=session[:user_id]%>">TAKE ME TO FRONT LINES</a>
 <%end%>
+</div>
+</main>

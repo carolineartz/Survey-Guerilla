@@ -1,22 +1,29 @@
-<h1>Sign Up</h1>
+<article id="sign-up" class="pure-g-r">
+<div class="form-head pure-u-1">
+  <h1>Sign Up</h1>
+</div>
 
-<div id="errors"><%= erb :"users/_model_errors", :layout => false, :locals => {:model => @user} %></div>
+  <div class="pure-u-1" id="errors"><%= erb :"users/_model_errors", :layout => false, :locals => {:model => @user} %></div>
 
-<form id="sign-up" method="post" action="/users">
-  <label class="label" for="name">Name</label>
-  <input type="text" name="user[username]" placeholder="e.g., joe" value="<%= @user.username %>">
-  <span id="name-errors" class="errors"></span>
-  <br>
+  <form class="pure-u-1 pure-skin-mine pure-form pure-form-aligned" id="sign-up" method="post" action="/users">
+  <div class="pure-control-group">
+    <label class="label" for="name">Name</label>
+    <input type="text" name="user[username]" placeholder="e.g., joe" value="<%= @user.username %>">
+    <span id="name-errors" class="errors"></span>
+    </div>
 
-  <label class="label" for="email">Email</label>
-  <input type="email" name="user[email]" placeholder="e.g., me@example.com" value="<%= @user.email %>">
-  <span id="email-errors" class="errors"></span>
-  <br>
+  <div class="pure-control-group">
+    <label class="label" for="email">Email</label>
+    <input type="email" name="user[email]" placeholder="e.g., me@example.com" value="<%= @user.email %>">
+    <span id="email-errors" class="errors"></span>
+    </div>
 
-  <label class="label" for="password">Password</label>
-  <input type="password" name="user[password]" placeholder="6 or more characters">
-  <span id="entered_password-errors" class="errors"></span>
-  <br>
-
-  <div class="submit"><input type="submit" value="Sign Up"></div>
-</form>
+  <div class="pure-control-group">
+    <label class="label" for="password">Password</label>
+    <input type="password" name="user[password]" placeholder="6 or more characters">
+    <span id="entered_password-errors" class="errors"></span>
+    </div>
+  
+    <div class="submit pure-controls"><button class="pure-button" type="submit" value="Sign Up">Take Me To The Front Lines</button></div>
+  </form>
+</article>

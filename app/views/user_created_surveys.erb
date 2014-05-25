@@ -1,4 +1,4 @@
-<h3><%=@user.username%>'s created surveys </h3>
+<h2><%=@user.username%>'s created surveys </h2>
 <% @user.surveys.each do |survey| %>
 
   <p><a href="/surveys/<%=survey.id%>"><%= survey.title %></a></p>

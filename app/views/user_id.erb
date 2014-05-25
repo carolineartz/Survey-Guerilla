@@ -1,12 +1,30 @@
-<h1>User home page</h1>
+<div class="pure-g-r">
+  <div class="form-head pure-u-1">
+    <h1>Survey Soldier <%=current_user.username %> </h1>
+  </div>
 
 <!--   <form method="post" action="/sessions">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Logout">
   </form> -->
 
-<a href="/surveys/new">Create New Survey</a><br><br>
+  <div class="pure-u-1-2 pure-menu pure-menu-open">
+      <a class="pure-menu-heading"><%=current_user.username %>'s links</a>
 
-<a href="/surveys/take">Take Survey</a><br><br>
+      <ul>
+          <li><a href="/surveys/new">Create New Survey</a></li>
+          <li><a href="/surveys/take">Take Survey</a></li>
+          <li><a href="/users/<%=session[:user_id]%>/surveys">View Your Surveys</a></li>
+      </ul>
+  </div>
+</div>
 
-<a href="/users/<%=session[:user_id]%>/surveys">View Your Surveys</a><br><br>
+
+<!-- <div 
+<a href="/surveys/new">Create New Survey</a>
+
+<a href="/surveys/take">Take Survey</a>
+
+<a href="/users/<%#=session[:user_id]%>/surveys">View Your Surveys</a>
+</div>
+ -->

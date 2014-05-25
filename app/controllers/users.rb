@@ -50,7 +50,7 @@ post '/users' do
   if @user.save
     # successfully created new account; set up the session and redirect
     session[:user_id] = @user.id
-    redirect "/users/#{user.id}"
+    redirect "/users/#{@user.id}"
   else
     # an error occurred, re-render the sign-up form, displaying errors
     erb :"users/sign_up"

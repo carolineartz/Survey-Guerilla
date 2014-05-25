@@ -1,0 +1,65 @@
+<h2>Create Survey</h2>
+
+<!-- <div id="show_survey_title">
+  Survey Title:
+</div> -->
+
+
+<!-- <form id="create_survey" method="post" action="/surveys/new">
+  <h2><label id="title_label">Survey Title:
+  <input id="survey_title_field" type="text" name="title" placeholder="Survey Title">
+  <button id="build_survey">Build Survey</button>
+
+  </label></h2>
+
+  <div id ="question_set_1"><label id="question_label_1">Create Question:
+  <input id="question_field" type="text" name="question_text" placeholder="Question">
+
+  <button id="build_question">Add New Question</button>
+  </label></div>
+
+
+  <div id ="choice_set_1"><label>Create Possible Choices:
+  <input id="choice_field" type="text" name="choice_text" placeholder="Possible Choice">
+  <button id="add_new_choice">Add New Choice</button>
+  </label></div>
+
+  <input id="form_complete" type="submit" value="Create Survey">
+</form> -->
+<!-- ________________________________________________________________ -->
+
+<form id="create_survey" method="post" action="/surveys/new">
+    <h2 id="add_title">
+        <label id="title_label">Survey Title:
+            <input id="field_survey_title" type="text" name="title" placeholder="Survey Title">
+            <button id="button_build_survey">Start Building</button>
+        </label>
+    </h2>
+
+    <!-- this is where the title is rendered -->
+
+    <h3>Survey Questions</h3>
+    <div id="form_questions">
+        <section class="question_choice_set">
+            <input id="question_1" type="text">
+            <a class="remove remove_question" href="#">x</a>
+
+            <ul>
+                <li>
+                    <input id="choice_1" type="text">
+                    <a class="remove remove_choice" href="#">x</a>
+                </li>
+                <li>
+                    <span class="form_button">
+                        <a id="add_choice">+ Choice</a>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="form_button" <a id="add_question">+ Question</a>
+        </div>
+    </div>
+
+    <input id="form_complete" type="submit" value="Create Survey">
+</form>
