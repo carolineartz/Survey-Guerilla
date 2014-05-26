@@ -1,5 +1,4 @@
 get '/surveys/new' do
-v
   erb :surveys_new
 end
 
@@ -11,7 +10,6 @@ end
 get '/surveys/:survey_id' do
   @survey = Survey.find_by_id(params[:survey_id])
   @survey_question = @survey.questions
-
   erb :survey_results
 end
 
